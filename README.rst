@@ -16,7 +16,7 @@ Exercises
 4. (advanced) Make the network `ffnn.py` deeper and faster: change to ReLU and add an extra hidden layer
 5. **Tune hyperparameters to get `cnn.py` to converge**
 6. **(advanced) Add more convolutional layers, either in line with the first one for a "deeper" first layer, or after the first one, for a "deeper" overall network**
-7. **(advanced) Make the network `ffnn.py` deeper and faster: change to ReLU and add an extra hidden layer*(advanced) Implement the CNN from my blocked-out code `cnn_nyi.py`**
+7. **(advanced) Implement the CNN from my blocked-out code `cnn_nyi.py`**
 8. **(advanced) Change our CNN to be used for NLP**
 
 If you're running AWS, here's some details you'll need to get jupyter notebooks running:  from the home directory (`cd ~`), type
