@@ -19,8 +19,12 @@ Exercises
 8. **(advanced) Change our CNN to be used for NLP**
 
 If you're running AWS, here's some details you'll need to get jupyter notebooks running:  from the home directory (`cd ~`), type
+
 `jupyter notebook --certfile=~/certs/mycert.pem --keyfile ~/certs/mycert.key`
+
 then you can go to your webbrowser and navigate to
+
 http://<your-ec2-instance-public-ip-address>:8888/
+
 and enter the password: lmlp
 Your EC2 public ip address is located on your EC2 console page.
