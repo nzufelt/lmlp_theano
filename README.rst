@@ -1,6 +1,7 @@
 README for lmlp-theano
 ----------------------
 This repo contains several files of interest:
+
 * This `README` which contains the 8 exercises for our 7th April 2016 meetup on theano and CNNs.
 * `ffnn.py` serves as an introduction to theano using a feedforward (*i.e.* traditional) neural network (exercises 1-4).
 * `cnn_nyi.py` contains the sketched-out architecture of a CNN (via comments), which you could choose to implement (exercise 7).
@@ -27,4 +28,5 @@ then you can go to your webbrowser and navigate to
 http://<your-ec2-instance-public-ip-address>:8888/
 
 and enter the password: lmlp
+
 Your EC2 public ip address is located on your EC2 console page.
