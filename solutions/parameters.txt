@@ -1,0 +1,4 @@
+Below are some parameters that I found to converge.  Can you find parameters that get better accuracy?
+
+python ffnn.py 
+python cnn.py 5 5 3 2 90 200 40 2000 128 .01 .2

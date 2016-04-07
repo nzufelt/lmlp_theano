@@ -5,13 +5,13 @@ This repo contains several files of interest:
 * `ffnn.py` serves as an introduction to theano using a feedforward (*i.e.* traditional) neural network (exercises 1-4).
 * `cnn_nyi.py` contains the sketched-out architecture of a CNN (via comments), which you could choose to implement (exercise 7).
 * `solutions/cnn.py` is an implemented CNN which you could use for exercises 5, 6, or 8.   
-* `solutions/parameters.txt.` contains some parameters that I found allowed the networks to converge.
+* `solutions/parameters.txt` contains some parameters that I found allowed the networks to converge.
 
 Exercises
 ---------
 
 1. Tune hyperparameters to get `ffnn.py` to converge
-2. Extend `ffnn.py` to multiclass: use one-hot vectors for y
+2. Extend `ffnn.py` to classify MNIST digits: first extend to multiclassification using one-hot vectors for y, then read in `train.csv` and tune hyperparameters for convergence
 3. (advanced) Implement _Dropout_: during each training step, pick some subset of random nodes to drop, and scale the rest of the weights accordingly  
 4. (advanced) Make the network `ffnn.py` deeper and faster: change to ReLU and add an extra hidden layer
 5. **Tune hyperparameters to get `cnn.py` to converge**

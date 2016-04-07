@@ -1,27 +1,39 @@
 """
-Implement a feedforward neural network using theano.
+A feedforward neural network using theano.
+
+This script was created by Nicholas Zufelt as a part of the London Machine Learning
+Practice meetup.
 
 Calling this script with an example:
-$ python ff_nn noclass.py 3 6 .01 .01 10000 1000 61
+$ python ffnn.py 2 5 1000 100 1000 .01 .01
+
+Parameters:
+    n_inputs -- number of nodes in the input layer
+    n_hidden -- number of nodes in the hidden layer
+    epochs -- number of training epochs
+    print_every -- on which epoch should the current cost print
+    n_samples -- number of training samples
+    reg -- regularization strength
+    alpha -- learning rate
 """
-import numpy as np
 import sys
+import numpy as np
+from sklearn.datasets import make_moons
 import theano
 import theano.tensor as T
 
 # Receive inputs from user
-n_inputs,n_hidden = (int(i) for i in sys.argv[1:3])
-n_outputs = 1                                       # binary classification ! 
-reg,alpha = (float(i) for i in sys.argv[3:5])
-epochs,print_every = (int(i) for i in sys.argv[5:7])
-n_samples = int(sys.argv[7])
+(n_inputs,n_hidden,epochs,print_every,
+    n_samples,batch) = (int(i) for i in sys.argv[1:7])
+reg,alpha = (float(i) for i in sys.argv[7:])
+n_outputs = 1      # binary classification
 
 # Need to initialize the parameters to a small, random number
-n = 1/(np.sqrt(n_inputs * n_outputs * n_hidden))
+noise = 1/(np.sqrt(n_inputs * n_outputs * n_hidden))
 
 # Weights and biases
-W1 = theano.shared(n*np.random.randn(n_inputs,n_hidden), name='W1')
-W2 = theano.shared(n*np.random.randn(n_hidden,n_outputs), name='W2')
+W1 = theano.shared(noise*np.random.randn(n_inputs,n_hidden), name='W1')
+W2 = theano.shared(noise*np.random.randn(n_hidden,n_outputs), name='W2')
 b1 = theano.shared(np.zeros(n_hidden), name='b1')
 b2 = theano.shared(np.zeros(n_outputs), name='b2')
 
@@ -52,24 +64,16 @@ epoch = theano.function(inputs = [x,y],
 predict = theano.function(inputs=[x],outputs=prediction)
 
 # generate toy data
-N = n_samples
-D = (np.random.randn(N,n_inputs),np.random.randint(size=N,low=0,high=2)) 
+Data = make_moons(n_samples=n_samples,noise=.17)
 
 # train the model
 for i in range(epochs):
-    pred,err = epoch(D[0],D[1])
+    pred,err = epoch(Data[0],Data[1])
     if i % print_every == 0:
         print('Error after epoch {}: {}'.format(i,err))
 
 # check accuracy
-preds = predict(D[0]).T[0]
-wrong = (preds != D[1]).sum()
+preds = predict(Data[0]).T[0]
+wrong = (preds != Data[1]).sum()
 score = (N*1.0 - wrong)/N
 print("Our model made {} errors, for an accuracy of {}".format(wrong, score))
-
-
-
-
-
-
-
