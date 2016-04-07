@@ -5,7 +5,7 @@ This script was created by Nicholas Zufelt as a part of the London
 Machine Learning Practice meetup.
 
 Calling this script with an example:
-$ python ffnn.py 2 5 1000 100 1000 .01 .01
+$ python ffnn.py 2 5 1000 100 200 20 .01 .01
 
 Parameters:
     n_inputs -- number of nodes in the input layer
@@ -75,5 +75,5 @@ for i in range(epochs):
 # check accuracy
 preds = predict(Data[0]).T[0]
 wrong = (preds != Data[1]).sum()
-score = (N*1.0 - wrong)/N
+score = (n_samples*1.0 - wrong)/n_samples
 print("Our model made {} errors, for an accuracy of {}".format(wrong, score))

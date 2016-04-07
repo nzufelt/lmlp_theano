@@ -118,7 +118,7 @@ compute_cost = theano.function(inputs = [X,y],
                                outputs = [cost,crossent.sum()])
 
 # Read in MNIST data
-train_df = pd.read_csv('train.csv')[0:n_samples]
+train_df = pd.read_csv('../data/train.csv')[0:n_samples]
 X_data = train_df.values
 del train_df # free up some memory
 I = np.identity(10)
