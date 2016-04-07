@@ -11,7 +11,7 @@ This repo contains several files of interest:
 Exercises
 ---------
 1. Tune hyperparameters to get `ffnn.py` to converge
-2. Extend `ffnn.py` to classify MNIST digits: first extend to multiclassification using one-hot vectors for y, then read in `train.csv` and tune hyperparameters for convergence
+2. Extend `ffnn.py` to classify MNIST digits: first extend to multiclassification using one-hot vectors for y, implement SGD, then read in `train.csv` and tune hyperparameters for convergence
 3. (advanced) Implement _Dropout_: during each training step, pick some subset of random nodes to drop, and scale the rest of the weights accordingly
 4. (advanced) Make the network `ffnn.py` deeper and faster: change to ReLU and add an extra hidden layer
 5. **Tune hyperparameters to get `cnn.py` to converge**
