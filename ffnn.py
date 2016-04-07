@@ -1,8 +1,8 @@
 """
 A feedforward neural network using theano.
 
-This script was created by Nicholas Zufelt as a part of the London Machine Learning
-Practice meetup.
+This script was created by Nicholas Zufelt as a part of the London
+Machine Learning Practice meetup.
 
 Calling this script with an example:
 $ python ffnn.py 2 5 1000 100 1000 .01 .01
